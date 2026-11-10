@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "5c611feedb6510a9",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0f1efdd00bd793a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e499ec0b7f230806",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.15 - Newton para x mas x a la 1 mas alfa.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6.15 - Newton para x mas x a la 1 mas alfa"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "621f2592ab333a60",
+    "type": "split",
+    "children": [
+      {
+        "id": "752061261f854af0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90b9393a568c3984",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "ad3748477975ff99",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "condicion",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "eab9b35598c97214",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 454.16668701171875
+  },
+  "right": {
+    "id": "aae3724a98d5874a",
+    "type": "split",
+    "children": [
+      {
+        "id": "374c80e6e2d663fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5dc521489415ab44",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tablas Comparativas/Tablas Comparativas - GC vs GMRes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "c5de4d01fcb295ce",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Tablas Comparativas/Tablas Comparativas - GC vs GMRes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "c380ca313704fcce",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "afa9fb20d5ffcce1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "274068847353c044",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tablas Comparativas/Tablas Comparativas - GC vs GMRes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          },
+          {
+            "id": "89759bf0d1a3e378",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "e499ec0b7f230806",
+  "lastOpenFiles": [
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.5 - Contraccion para h chico.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.7 - Demostrar Teorema 6.17.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.4 - Region para el teorema de contraccion.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.3 - Contraccion en acotados.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.2 - Contraccion local si rho menor que 1.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Problemas/6.1 - Rho igual a 1 no decide.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Metodo de Newton - convergencia cuadratica.md",
+    "06 Capitulo 6 - Sistemas No Lineales/Capitulo 6 - MOC.md",
+    "Parciales/Parcial Modelo - Problema 4.md",
+    "Parciales/Parcial Modelo - Problema 3.md",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Teoremas/Cota de norma infinito de Gauss-Seidel para matrices e.d.d..md",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Teoremas/4.5(b) - Formula norma infinito.md",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Teoremas/Teorema de convergencia de Gauss-Seidel con e.d.d..md",
+    "Parciales/Parcial Modelo - Problema 2.md",
+    "03 Capitulo 3 - Factorizacion QR/Rotaciones de Givens.md",
+    "03 Capitulo 3 - Factorizacion QR/Ortogonalizacion de Gram-Schmidt.md",
+    "Tablas Comparativas/Costo computacional metodos directos.md",
+    "Tablas Comparativas/Comparacion metodos iterativos estacionarios.md",
+    "03 Capitulo 3 - Factorizacion QR/Teoremas/Teorema 3.5.md",
+    "05 Capitulo 5 - Metodos de Descenso/Problemas/5.15 - Programar GMRes con Givens.md",
+    "03 Capitulo 3 - Factorizacion QR/Matrices de Householder.md",
+    "03 Capitulo 3 - Factorizacion QR/Problemas/3.2 - Funcion mincuad.md",
+    "02 Capitulo 2 - Metodos Directos/Matrices triangulares - sustitucion.md",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Problemas/4.14 - triinf trisup un solo for.md",
+    "02 Capitulo 2 - Metodos Directos/Problemas/2.9 - Estabilidad con pivoteo.md",
+    "02 Capitulo 2 - Metodos Directos/Problemas/2.4 - trisup a partir de triinf.md",
+    "attachments/cap4-bolas-unitarias.png",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Problemas/4.15 - Jacobi Gauss-Seidel SOR en sistemas concretos.md.tmp.4584.d8fb0854b90b",
+    "attachments/cap4-jgsor-sistema2.png",
+    "attachments/cap4-jgsor-sistema1.png",
+    "05 Capitulo 5 - Metodos de Descenso/Problemas/5.7 - Comparacion metodos sistema 2D.md.tmp.4584.d48f78706c8f",
+    "attachments/cap5-comparacion-2d.png",
+    "Tablas Comparativas/Tablas Comparativas - Indice.md.tmp.4584.01c9cb408151",
+    "Tablas Comparativas/Tablas Comparativas - Formulario de cotas e iteraciones.md.tmp.4584.d1a20ead98be",
+    "attachments/cap5-curvas-nivel-sd-gc.png",
+    "attachments/cap5-sd-gc-1d.png",
+    "attachments/cap5-jacobi-gs-sor.png",
+    "Parciales/Parcial Modelo - Problema 4.md.tmp.4584.12a42b752ba8",
+    "Parciales/Parcial Modelo - Problema 4.md.tmp.4584.97bc71877430",
+    "Parciales/Parcial Modelo - Problema 4.md.tmp.4584.98d6e57c0072",
+    "Demostraciones/Demostraciones - Indice.md.tmp.4584.6a71aa37edd5",
+    "Demostraciones/Demostraciones - Capitulo 4.md.tmp.4584.25368613186d",
+    "04 Capitulo 4 - Metodos Iterativos Estacionarios/Metodo de Gauss-Seidel.md.tmp.4584.3e96b66baa60",
+    "Canvas/Mapa del curso.canvas",
+    "attachments/gc-poly-cambio-de-variable.png",
+    "attachments/gc-poly-caso4-raices-exactas.png",
+    "attachments/gc-poly-caso3-tres-bloques.png",
+    "Sin título 1.canvas",
+    "Sin título.canvas"
+  ]
+}

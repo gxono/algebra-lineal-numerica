@@ -1,0 +1,9 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "cssTheme": "LaTeX",
+  "baseFontSize": 17,
+  "enabledCssSnippets": [
+    "parcial"
+  ]
+}

@@ -1,0 +1,189 @@
+.\Referencia de Julia.md:79: ones(n)                                   ;    ones(n,m)
+.\Referencia de Julia.md:120: x, hist = cg(A, b; Pl=precon, reltol=1e-10, log=true)       # gradiente conjugado (A sdp)
+.\Referencia de Julia.md:121: x, hist = gmres(A, b; restart=n, reltol=1e-10, log=true)    # GMRes
+.\Referencia de Julia.md:130: x = jacobi(A, b; maxiter=500)        # NO iteran hasta converger -
+.\Referencia de Julia.md:131: x = gauss_seidel(A, b; maxiter=500)  # ejecutan EXACTAMENTE `maxiter` iteraciones (default 10)
+.\Referencia de Julia.md:132: x = sor(A, b, ω; maxiter=500)        # bajo su propio riesgo: si el método diverge
+.\Referencia de Julia.md:133: x = ssor(A, b, ω; maxiter=500)       # con ese ω, `x` sale sin ningún aviso
+.\Referencia de Julia.md:151: x, hist = cg(A, b; Pl=AMGPreconditioner(RugeStuben, A), reltol=1e-10, log=true)
+.\Referencia de Julia.md:177: A = [1 1 1; eps 0 0; 0 eps 0; 0 0 eps]     # matriz simbólica: tipo Matrix{Num}
+.\01 Capitulo 1 - Introduccion\Graficos con CairoMakie.md:51: contour!(ax, xs, ys, φ; levels=25)      # φ(x,y), xs/ys rangos
+.\01 Capitulo 1 - Introduccion\Resolver sistemas lineales en Julia.md:15: A = [3 5 1; 1 -6 1; 1 0 1]
+.\01 Capitulo 1 - Introduccion\Resolver sistemas lineales en Julia.md:23: A = rand(10,10); b = rand(10)
+.\01 Capitulo 1 - Introduccion\Resolver sistemas lineales en Julia.md:36: A[1,1] = 1; A[N,N] = 1
+.\01 Capitulo 1 - Introduccion\Sintaxis basica de Julia.md:13: A = [1 2 3; 4 5 6; 7 8 9]      # matriz 3x3, separador de filas ";"
+.\01 Capitulo 1 - Introduccion\Sintaxis basica de Julia.md:30: [A; b']         # concatenación vertical (vcat)
+.\02 Capitulo 2 - Metodos Directos\Metodo de Gauss - eliminacion.md:27:     A = copy(M); c = copy(b)
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.10 - Funcion lu de Julia.md:12: A = [2.0 1 -1; -2 -10 0; -1 -1 4]
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.14 - Cholesky recursiva.md:20:     n == 1 && (A[1,1] = sqrt(A[1,1]); return A)
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.14 - Cholesky recursiva.md:35: function mi_cholesky_tridiag!(M::Tridiagonal; niv=1)
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.5 - Factorizacion LU tridiagonal.md:61:     x = similar(b); n = length(b)
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.8 - Inestabilidad sin pivoteo.md:20:     A = [δ 1.0; 1.0 1.0]
+.\02 Capitulo 2 - Metodos Directos\Problemas\2.9 - Estabilidad con pivoteo.md:12:     A = [δ 1.0; 1.0 1.0]
+.\03 Capitulo 3 - Factorizacion QR\Estabilidad y numero de condicion.md:55:     xtrue = ones(4); b = A * xtrue
+.\03 Capitulo 3 - Factorizacion QR\Ortogonalizacion de Gram-Schmidt.md:57:     n, m = size(A); Q = zeros(n, m); R = zeros(m, m)
+.\03 Capitulo 3 - Factorizacion QR\Ortogonalizacion de Gram-Schmidt.md:64:         R[j, j] = norm(v); Q[:, j] = v / R[j, j]
+.\03 Capitulo 3 - Factorizacion QR\Problemas\3.2 - Funcion mincuad.md:15: A = rand(1000, 3); b = rand(1000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Gauss-Seidel.md:27:     gauss_seidel(A, b; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Gauss-Seidel.md:31: function gauss_seidel(A, b; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Gauss-Seidel.md:33:     L = tril(A, -1); D = Diagonal(A); U = triu(A, 1)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Jacobi.md:25:     jacobi(A, b; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Jacobi.md:30: function jacobi(A, b; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Richardson.md:31:     richardson(A, b, α; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo de Richardson.md:33: function richardson(A, b, α; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo SOR.md:33:     SOR(A, b, ω; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo SOR.md:35: function SOR(A, b, ω; tol=1e-6, maxiter=10_000)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Metodo SOR.md:37:     D = Diagonal(A); L = tril(A, -1); U = triu(A, 1)
+.\04 Capitulo 4 - Metodos Iterativos Estacionarios\Problemas\4.15 - Jacobi Gauss-Seidel SOR en sistemas concretos.md:20: A = [2.0 1.0 -1.0; -2.0 -10.0 0.0; -1.0 -1.0 4.0]   # sistema (i)
+.\05 Capitulo 5 - Metodos de Descenso\Descenso mas pronunciado.md:17: function descmaspron(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Descenso mas pronunciado.md:18:     x = copy(x0); r = b - A*x
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:58: function gmres(A, b, x0; tol=1e-8, kmax=length(b))
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:60:     r0 = b - Av(x0); β = ρ = norm(r0)
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:61:     V = zeros(length(b), kmax+1); V[:,1] = r0/ρ
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:63:     g = zeros(kmax+1); g[1] = β
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:64:     c = zeros(kmax); s = zeros(kmax)
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:73:         H[k+1,k] = norm(w); V[:,k+1] = w/H[k+1,k]
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:75:             H[j:j+1,k] = [c[j] -s[j]; s[j] c[j]] * H[j:j+1,k]
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:78:         c[k] = H[k,k]/ν; s[k] = -H[k+1,k]/ν
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:79:         H[k,k] = ν; H[k+1,k] = 0
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - implementacion y rotaciones de Givens.md:80:         g[k:k+1] = [c[k] -s[k]; s[k] c[k]] * g[k:k+1]
+.\05 Capitulo 5 - Metodos de Descenso\GMRes - precondicionamiento.md:62: xstar = ones(n); b = A*xstar
+.\05 Capitulo 5 - Metodos de Descenso\Gradiente conjugado no simetrico - CGNR y CGNE.md:23: function cgnr(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Gradiente conjugado no simetrico - CGNR y CGNE.md:25:     return gradconj(AtA, A'b, x0; tol=tol, max_iter=max_iter)
+.\05 Capitulo 5 - Metodos de Descenso\Gradiente conjugado no simetrico - CGNR y CGNE.md:28: function cgne(A, b, y0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Gradiente conjugado no simetrico - CGNR y CGNE.md:30:     y, iter = gradconj(AAt, b, y0; tol=tol, max_iter=max_iter)
+.\05 Capitulo 5 - Metodos de Descenso\Implementacion del gradiente conjugado.md:43:     gradconj(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Implementacion del gradiente conjugado.md:47: function gradconj(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Implementacion del gradiente conjugado.md:49:     x = copy(x0); r = b - Av(x); ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Implementacion del gradiente conjugado.md:50:     d = copy(r); ρold = 0.0
+.\05 Capitulo 5 - Metodos de Descenso\Implementacion del gradiente conjugado.md:61:         ρold = ρ; ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:44:     n = length(u); ω = 2/3
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:46:         Au = (2u .- [u[2:n];0] .- [0;u[1:n-1]]) / h^2
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:53:     n = length(r); nc = (n-1)÷2
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:58:     nc = length(vc); n = 2nc+1
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:59:     vext = [0; vc; 0]
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:70:     Au = (2u .- [u[2:n];0] .- [0;u[1:n-1]]) / h^2
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:137: function gradconjp_resid_hist(A, b, precon, x0; tol=1e-10, max_iter=200)
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:139:     x = copy(x0); r = b - A*x; z = Mv(r); ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:140:     d = copy(z); ρold = 0.0; iter = 0
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:148:         x += α*d; r -= α*w; z = Mv(r)
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:149:         ρold = ρ; ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:157: iters_gc = Int[]; iters_mg = Int[]
+.\05 Capitulo 5 - Metodos de Descenso\Multigrid en 1D - transferencia e implementacion.md:164:     _, k_gc = gradconjp_resid_hist(A, b, v -> v, zeros(n); max_iter=3n)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionadores genericos.md:72: function gradconjp_hist(A, b, precon, x0; tol=1e-10, max_iter=60)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionadores genericos.md:74:     x = copy(x0); r = b - A*x; z = Mv(r); ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionadores genericos.md:76:     d = copy(z); ρold = 0.0
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionadores genericos.md:85:         x += α*d; r -= α*w; z = Mv(r)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionadores genericos.md:86:         ρold = ρ; ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:66:     gradconjp(A, b, precon, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:68: function gradconjp(A, b, precon, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:71:     x = copy(x0); r = b - Av(x); z = Mv(r); ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:72:     d = copy(z); ρold = 0.0
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:81:         x += α*d; r -= α*w; z = Mv(r)
+.\05 Capitulo 5 - Metodos de Descenso\Precondicionamiento y GCP.md:82:         ρold = ρ; ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:10: function gradconjp(A, b, precon, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:13:     x = copy(x0); r = b - Av(x); z = Mv(r); ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:15:     d = copy(z); ρold = 0.0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:24:         x += α*d; r -= α*w; z = Mv(r)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:25:         ρold = ρ; ρ = r'z
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.11 - GCP y Cholesky incompleta.md:42:     n = size(A,1); L = zeros(n,n)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:12:     n = length(u); ω = 2/3
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:14:         Au = (2u .- [u[2:n];0] .- [0;u[1:n-1]]) / h^2
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:21:     n = length(r); nc = (n-1)÷2
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:26:     nc = length(vc); n = 2nc+1
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:27:     vext = [0; vc; 0]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:38:     Au = (2u .- [u[2:n];0] .- [0;u[1:n-1]]) / h^2
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:63: N = 63; h = 1/(N+1)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:77: canonico(n, j) = (e = zeros(n); e[j] = 1.0; e)   # j-ésimo vector de la base canónica, en Rⁿ
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:89:     N = 2^L - 1; h = 1/(N+1)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:95:         u = vciclo(u, f, h, 1, 1); k += 1
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:105: function rho_medido(N, nu; maxciclos=50, tol=1e-8)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.12 - Multigrid como metodo iterativo.md:142: function barridos_necesarios(N, nu; maxbarridos=200_000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.13 - Multigrid como precondicionador.md:12: n = 31; h = 1/(n+1)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.13 - Multigrid como precondicionador.md:13: canonico(n, j) = (e = zeros(n); e[j] = 1.0; e)   # evita la ambigüedad de I(n) (ver Problema 5.12b)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:14: function gmres_debug(A, b, x0; tol=1e-8, kmax=length(b))
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:16:     r0 = b - Av(x0); β = ρ = norm(r0)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:17:     V = zeros(length(b), kmax+1); V[:,1] = r0/ρ
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:19:     g = zeros(kmax+1); g[1] = β
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:20:     c = zeros(kmax); s = zeros(kmax)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:29:         H[k+1,k] = norm(w); V[:,k+1] = w/H[k+1,k]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:31:             H[j:j+1,k] = [c[j] -s[j]; s[j] c[j]] * H[j:j+1,k]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:34:         c[k] = H[k,k]/ν; s[k] = -H[k+1,k]/ν
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:35:         H[k,k] = ν; H[k+1,k] = 0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:36:         g[k:k+1] = [c[k] -s[k]; s[k] c[k]] * g[k:k+1]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.15 - Programar GMRes con Givens.md:43: A = [4.0 1 0 0; 1 3 1 0; 0 1 2 1; 0 0 1 3]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.16 - Programar GMRes con restart.md:8: function gmres_restart(A, b, x0, m; tol=1e-8, maxrestarts=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.16 - Programar GMRes con restart.md:9:     x = copy(x0); total_matvecs = 0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.16 - Programar GMRes con restart.md:11:         x, k = gmres(A, b, x; tol=tol, kmax=m)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.17 - Comparar GC y GMRes.md:12: xstar = ones(n); b = A*xstar      # mismo RHS genérico que en [[Tablas Comparativas - GC vs SD]]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.18 - Problema con conveccion.md:71:     _, k_gmres = gmres(A, b, zeros(n); tol=1e-10, kmax=n)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.18 - Problema con conveccion.md:72:     _, k_cgnr  = cgnr(A, b, zeros(n); tol=1e-10, max_iter=3n^2)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.18 - Problema con conveccion.md:73:     _, k_cgne  = cgne(A, b, zeros(n); tol=1e-10, max_iter=3n^2)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:10: function descmaspron(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:12:     x = copy(x0); r = b - Av(x)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:26: function gradconj(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:28:     x = copy(x0); r = b - Av(x); ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:30:     d = copy(r); ρold = 0.0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:39:         x += α*d; r -= α*w
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.3 - Programar descenso y GC.md:40:         ρold = ρ; ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:11: A = [2.0 1.0; 1.0 3.0]; b = [1.0, -2.0]
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:13: xs = range(-1,3,length=150); ys = range(-3,1,length=150)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:16: contour!(ax, xs, ys, φ; levels=25)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:28: function descmaspron_full(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:29:     x = copy(x0); r = b - A*x
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:30:     X = [copy(x)]; iter = 0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:34:         x += α*r; r -= α*Ar
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:35:         iter += 1; push!(X, copy(x))
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:40: function gradconj_full(A, b, x0; tol=1e-8, max_iter=1000)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:41:     x = copy(x0); r = b - A*x; ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:42:     d = copy(r); ρold = 0.0; iter = 0
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:51:         x += α*d; r -= α*w
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:52:         ρold = ρ; ρ = r'r
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:53:         iter += 1; push!(X, copy(x))
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:58: xsd, itsd, Xsd = descmaspron_full(A, b, [0.0,0.0]; tol=1e-3)   # itsd = 9
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.4 - Curvas de nivel ejemplo 2x2.md:59: xcg, itcg, Xcg = gradconj_full(A, b, [0.0,0.0]; tol=1e-3)       # itcg = 2, xcg=(1,-1)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.5 - Comparacion metodos sistema 1D.md:16: A = Ah(N); h = 1/(N+1)
+.\05 Capitulo 5 - Metodos de Descenso\Problemas\5.5 - Comparacion metodos sistema 1D.md:51:     _, err = richardson(A, b, α; tol=1e-8, maxiter=3000)
+.\Parciales\Parcial Modelo - Problema 1.md:30: M = [0.8 1.0 0.0; 0.0 -0.8 1.0; 0.0 0.0 0.8]
+.\Parciales\Parcial Modelo - Problema 2.md:56:     A = zeros(4,3); A[1,:] .= 1.0
+.\Parciales\Parcial Modelo - Problema 2.md:57:     A[2,1]=eps; A[3,2]=eps; A[4,3]=eps
+.\Parciales\Parcial Modelo - Problema 2.md:65:     n,m = size(A); Q = zeros(n,m); R = zeros(m,m)
+.\Parciales\Parcial Modelo - Problema 2.md:72:         R[j,j] = norm(v); Q[:,j] = v/R[j,j]
+.\Parciales\Parcial Modelo - Problema 2.md:76: mincuad_gs_clasico(A,b) = (Q,R = gram_schmidt_clasico(A); R \ (Q'b))
+.\Parciales\Parcial Modelo - Problema 3.md:73: z1 = range(1,2,length=2000); z2 = range(2000,2001,length=2000); z3 = range(4999,5000,length=2000)
+.\Parciales\Parcial Modelo - Problema 4.md:85: n = 1000; h = 1/(n+1)
+.\Tablas Comparativas\Comparacion metodos iterativos estacionarios.md:45: _, errJ  = jacobi(A, b; tol=1e-8, maxiter=3000)
+.\Tablas Comparativas\Comparacion metodos iterativos estacionarios.md:46: _, errGS = gauss_seidel(A, b; tol=1e-8, maxiter=3000)
+.\Tablas Comparativas\Comparacion metodos iterativos estacionarios.md:47: _, errSOR = SOR(A, b, 1.9; tol=1e-8, maxiter=3000)
+.\Tablas Comparativas\Comparacion metodos iterativos estacionarios.md:48: _, errR  = richardson(A, b, αopt; tol=1e-8, maxiter=3000)
+.\Tablas Comparativas\Costo computacional metodos directos.md:39: t_chol  = [(A = rand(n,n); A = A*A'+n*I; @belapsed mi_cholesky!(copy($A))) for n in ns_densas]
+.\Tablas Comparativas\Costo computacional metodos directos.md:40: t_tridi = [(A = Tridiagonal(fill(-1.0,n-1), fill(2.0,n), fill(-1.0,n-1)); @belapsed tridilu($A)) for n in ns_tridi]
+.\Tablas Comparativas\Tablas Comparativas - GC vs GCP.md:34: function gradconjp_hist(A, b, precon, x0; tol=1e-10, max_iter=60)
+.\Tablas Comparativas\Tablas Comparativas - GC vs GCP.md:36:     x = copy(x0); r = b - A*x; z = Mv(r); ρ = r'z
+.\Tablas Comparativas\Tablas Comparativas - GC vs GCP.md:38:     d = copy(z); ρold = 0.0
+.\Tablas Comparativas\Tablas Comparativas - GC vs GCP.md:47:         x += α*d; r -= α*w; z = Mv(r)
+.\Tablas Comparativas\Tablas Comparativas - GC vs GCP.md:48:         ρold = ρ; ρ = r'z
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:45: function gradconj_resid_hist(A, b, x0; tol=1e-10, max_iter=150)
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:46:     x = copy(x0); r = b - A*x; ρ = r'r
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:48:     d = copy(r); ρold = 0.0
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:57:         x += α*d; r -= α*w
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:58:         ρold = ρ; ρ = r'r
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:65: function gmres_resid_hist(A, b, x0; tol=1e-10, kmax=length(b))
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:66:     r0 = b - A*x0; β = ρ = norm(r0)
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:67:     V = zeros(length(b), kmax+1); V[:,1] = r0/ρ
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:69:     g = zeros(kmax+1); g[1] = β
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:70:     c = zeros(kmax); s = zeros(kmax)
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:80:         H[k+1,k] = norm(w); V[:,k+1] = w/H[k+1,k]
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:82:             H[j:j+1,k] = [c[j] -s[j]; s[j] c[j]] * H[j:j+1,k]
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:85:         c[k] = H[k,k]/ν; s[k] = -H[k+1,k]/ν
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:86:         H[k,k] = ν; H[k+1,k] = 0
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:87:         g[k:k+1] = [c[k] -s[k]; s[k] c[k]] * g[k:k+1]
+.\Tablas Comparativas\Tablas Comparativas - GC vs GMRes.md:100: _, resid_gmres = gmres_resid_hist(A, b, zeros(N); kmax=150)
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:30: function descmaspron_hist(A, b, x0, xstar; tol=1e-12, max_iter=300)
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:31:     x = copy(x0); r = b - A*x
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:38:         x += α*r; r -= α*Ar
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:44: function gradconj_hist(A, b, x0, xstar; tol=1e-12, max_iter=300)
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:45:     x = copy(x0); r = b - A*x; ρ = r'r
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:47:     d = copy(r); ρold = 0.0
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:57:         x += α*d; r -= α*w
+.\Tablas Comparativas\Tablas Comparativas - GC vs SD.md:58:         ρold = ρ; ρ = r'r
